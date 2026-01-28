@@ -45,8 +45,13 @@ export default function Footer() {
                 delivering authentic taste and trusted quality.
               </p>
 
-              <p className="mt-6 text-green-300 text-xs">
+              {/* <p className="mt-6 text-green-300 text-xs">
                 © {new Date().getFullYear()} Farsan Gold. All rights reserved.
+              </p> */}
+
+              {/* FSSI Code */}
+              <p className="mt-1 text-green-300 text-l">
+                FSSI Code: <strong>13317008000404</strong>
               </p>
             </div>
 
@@ -58,8 +63,8 @@ export default function Footer() {
                 <h3 className="font-semibold mb-4">Quick Links</h3>
                 <ul className="space-y-3 text-sm text-green-200">
                   <li><Link href="/" className="hover:text-white">Home</Link></li>
-                  <li><Link href="/shop" className="hover:text-white">Shop</Link></li>
                   <li><Link href="/about" className="hover:text-white">About</Link></li>
+                  <li><Link href="/gallery" className="hover:text-white">Gallery</Link></li>
                   <li><Link href="/contact" className="hover:text-white">Contact</Link></li>
                 </ul>
               </div>
