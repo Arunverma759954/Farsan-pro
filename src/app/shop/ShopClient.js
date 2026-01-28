@@ -154,6 +154,72 @@ export default function ShopClient() {
 
         </div>
       </section>
+
+
+      {/* ===== MISSION & VISION ===== */}
+<section className="bg-white py-20 px-6">
+  <div className="max-w-7xl mx-auto">
+
+    {/* Heading */}
+    <div className="text-center mb-14">
+      <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
+        Our Mission & Vision
+      </h2>
+      <p className="mt-3 text-gray-600 max-w-2xl mx-auto">
+        We don’t just make snacks — we deliver trust, taste, and quality in every bite
+      </p>
+    </div>
+
+    {/* Cards */}
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+
+      {/* Mission */}
+      <div className="relative overflow-hidden rounded-3xl border border-gray-100 p-10 shadow-sm hover:shadow-lg transition">
+        <div className="absolute top-0 right-0 w-32 h-32 bg-green-100 rounded-full blur-3xl" />
+
+        <h3 className="text-2xl font-bold text-green-800 mb-4">
+          Our Mission
+        </h3>
+
+        <p className="text-gray-600 leading-relaxed">
+          Our mission is to bring freshly prepared, hygienic, and authentic
+          Indian farsan snacks to every household. By using premium-quality
+          ingredients, traditional recipes, and modern food safety standards,
+          we strive to provide a consistent and trustworthy snacking experience.
+        </p>
+
+        <ul className="mt-6 space-y-2 text-sm text-gray-700">
+          <li>✔ Freshly prepared every day</li>
+          <li>✔ Strict hygiene and quality control</li>
+          <li>✔ Honest pricing with premium taste</li>
+        </ul>
+      </div>
+
+      {/* Vision */}
+      <div className="relative overflow-hidden rounded-3xl border border-gray-100 p-10 shadow-sm hover:shadow-lg transition">
+        <div className="absolute bottom-0 left-0 w-32 h-32 bg-yellow-100 rounded-full blur-3xl" />
+
+        <h3 className="text-2xl font-bold text-green-800 mb-4">
+          Our Vision
+        </h3>
+
+        <p className="text-gray-600 leading-relaxed">
+          Our vision is to build Farsan Gold into one of India’s most trusted
+          and loved farsan brands — chosen not only for its taste, but also
+          for its quality, hygiene, and reliability.
+        </p>
+
+        <ul className="mt-6 space-y-2 text-sm text-gray-700">
+          <li>✔ Pan-India presence with local authenticity</li>
+          <li>✔ Innovation while preserving tradition</li>
+          <li>✔ Long-term customer trust and satisfaction</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
     </>
   );
 }

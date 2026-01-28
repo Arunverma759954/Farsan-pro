@@ -22,9 +22,12 @@ export default function FlashSaleSection() {
         {/* Heading + Subheading */}
         <div className="md:text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold">Farsan Gold Flash Sales</h2>
-          <p className="mt-2 text-green-200">
-            Grab your favorite farsan items at amazing discounts today!
-          </p>
+         <p className="mt-3 text-green-200 max-w-3xl mx-auto leading-relaxed">
+        Limited-time flash deals on our freshly prepared farsan snacks.  
+        Enjoy authentic taste, premium quality, and irresistible prices —  
+        only for a short time. Don’t miss out!
+      </p>
+
         </div>
 
         {/* Swiper */}

@@ -19,11 +19,11 @@ export default function ContactClient() {
         {/* Content */}
         <div className="max-w-7xl mx-auto px-6 md:text-center relative z-10">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight">
-            Contact Farsan Gold
+            Contact Aash Enterprises
           </h1>
           <p className="mt-6 md:mt-8 text-white/85 max-w-3xl mx-auto text-base md:text-lg">
-            We’re here to assist with orders, partnerships, and any questions you may have. 
-            Reach out to us and we’ll get back to you promptly.
+            We’re here to assist with orders, GST inquiries, and general questions.
+            Reach out to us and we’ll respond promptly.
           </p>
         </div>
 
@@ -49,7 +49,7 @@ export default function ContactClient() {
             Get in Touch
           </h1>
           <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
-            We’re here to help with orders, partnerships, and general inquiries.
+            We’re here to help with orders, GST inquiries, and general business queries.
           </p>
         </div>
       </section>
@@ -68,20 +68,36 @@ export default function ContactClient() {
               <div className="flex gap-3">
                 <MapPin className="text-green-700" />
                 <p>
-                  Farsan Gold Foods<br />
-                  Swarg Ashram Road, Hapur<br />
-                  Uttar Pradesh, India
+                  AASH ENTERPRISES<br />
+                  E-133, Gali No. 6, Sangam Vihar<br />
+                  New Delhi-110080
+                </p>
+
+                 <p>
+                  AASH ENTERPRISES<br />
+                  H.NO 726, 4th floor, Chirag Delhi-110017<br />
+                  New Delhi-110080
                 </p>
               </div>
 
               <div className="flex gap-3 items-center">
                 <Phone className="text-green-700" />
-                <p>+91 98765 43210</p>
+                <p>+91 85950 52849</p>
               </div>
 
               <div className="flex gap-3 items-center">
                 <Mail className="text-green-700" />
-                <p>info@farsangold.com</p>
+                <p>info@aashenterprises.com</p>
+              </div>
+
+              <div className="flex gap-3 items-center">
+                <span className="font-medium text-green-700">GST No.:</span>
+                <p>07AVOPP8792P1Z7</p>
+              </div>
+
+              <div className="flex gap-3 items-center">
+                <span className="font-medium text-green-700">Registered Address:</span>
+                <p>H. No. 726, 4th Floor, Chirag Delhi-110017</p>
               </div>
             </div>
 
@@ -143,7 +159,7 @@ export default function ContactClient() {
         <iframe
           className="w-full h-full border-0"
           loading="lazy"
-          src="https://www.google.com/maps?q=Hapur%20Uttar%20Pradesh&output=embed"
+          src="https://www.google.com/maps?q=Sangam%20Vihar%2C%20New%20Delhi&output=embed"
         ></iframe>
       </section>
     </>

@@ -6,6 +6,8 @@ import ProductsSection from "@/components/home/ProductsSection";
 import DeliveryBanner from "@/components/home/DeliveryBanner";
 import TestimonialSection from "@/components/home/TestimonialSection";
 import FAQSection from "@/components/home/FAQSection";
+import IntroSection from "@/components/home/IntroSection";
+import WhyChooseUs from "@/components/home/WhyChooseUs";
 
 
 export default function Home() {
@@ -13,10 +15,12 @@ export default function Home() {
     <>
     
       <Banner />
+      <IntroSection />
       <SnackCategories />
       <FlashSaleSlider />
       <ProductsSection />
       <DeliveryBanner />
+      <WhyChooseUs />
       <TestimonialSection />
       <FAQSection />
     </>

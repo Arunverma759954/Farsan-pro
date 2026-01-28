@@ -1,6 +1,8 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
+import { X } from "lucide-react";
 
 const categories = [
   {
@@ -45,62 +47,123 @@ const categories = [
   },
 ];
 
-  
- 
- 
-
-
 export default function ProductsSection() {
+  const [open, setOpen] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState("");
+
   return (
-    <section className="bg-white py-16">
-      <div className="max-w-7xl mx-auto px-4">
+    <>
+      {/* ================= PRODUCTS ================= */}
+      <section className="bg-white py-16">
+        <div className="max-w-7xl mx-auto px-4">
 
-        {/* Heading */}
-        <div className="md:text-center mb-12">
-          <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 to-green-500">
-            Explore Our Snacks
-          </h2>
-          <p className="mt-2 text-gray-600">
-            Fresh, tasty & premium quality snacks
-          </p>
+          {/* Heading */}
+          <div className="md:text-center mb-12">
+            <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 to-green-500">
+              Explore Our Snacks
+            </h2>
+            <p className="mt-2 text-gray-600">
+              Fresh, tasty & premium quality snacks
+            </p>
+          </div>
+
+          {/* Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            {categories.map((cat, idx) => (
+              <div
+                key={idx}
+                onClick={() => {
+                  setSelectedProduct(cat.name);
+                  setOpen(true);
+                }}
+                className="cursor-pointer rounded-2xl overflow-hidden bg-gradient-to-b from-yellow-50 to-green-50 shadow-md hover:shadow-xl transition"
+              >
+                {/* Image */}
+                <div className="relative w-full h-56">
+                  <Image
+                    src={cat.image}
+                    alt={cat.name}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+
+                {/* Content */}
+                <div className="p-6 text-center">
+                  <h3 className="text-xl font-semibold text-gray-800">
+                    {cat.name}
+                  </h3>
+                  <p className="text-sm text-gray-600 mt-2">
+                    {cat.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
         </div>
+      </section>
 
-        {/* Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-          {categories.map((cat, idx) => (
-            <div
-              key={idx}
-              className="rounded-2xl overflow-hidden bg-gradient-to-b from-yellow-50 to-green-50 shadow-md hover:shadow-xl transition"
+      {/* ================= POPUP ================= */}
+      {open && (
+        <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center px-4">
+          <div className="bg-white rounded-2xl w-full max-w-md p-6 relative">
+
+            {/* Close */}
+            <button
+              onClick={() => setOpen(false)}
+              className="absolute top-3 right-3 text-gray-500 hover:text-red-500"
             >
-              {/* BIG TOP IMAGE */}
-              <div className="relative w-full h-56">
-                <Image
-                  src={cat.image}
-                  alt={cat.name}
-                  fill
-                  className="object-cover"
-                />
-              </div>
+              <X />
+            </button>
 
-              {/* CONTENT */}
-              <div className="p-6 text-center">
-                <h3 className="text-xl font-semibold text-gray-800">
-                  {cat.name}
-                </h3>
+            <h3 className="text-2xl font-bold text-green-800 text-center mb-4">
+              Quick Order
+            </h3>
 
-                <p className="text-sm text-gray-600 mt-2">
-                  {cat.desc}
-                </p>
+            <form className="space-y-4">
+              {/* Product */}
+              <input
+                type="text"
+                value={selectedProduct}
+                readOnly
+                className="w-full border text-black rounded-lg px-4 py-2 bg-gray-100"
+              />
 
-                {/* <button className="mt-5 w-full rounded-full bg-gradient-to-r from-yellow-400 to-green-500 text-white py-2 text-sm font-medium hover:opacity-90 transition">
-                  Read More
-                </button> */}
-              </div>
-            </div>
-          ))}
+              {/* Variant */}
+              <select className="w-full border text-black rounded-lg px-4 py-2">
+                <option>Select Variant</option>
+                <option>Regular</option>
+                <option>Masala</option>
+                <option>Spicy</option>
+              </select>
+
+              {/* Quantity */}
+              <input
+                type="number"
+                placeholder="Quantity (kg / packets)"
+                className="w-full border text-black rounded-lg px-4 py-2"
+              />
+
+              {/* Mobile */}
+              <input
+                type="tel"
+                placeholder="Mobile Number"
+                className="w-full border text-black rounded-lg px-4 py-2"
+              />
+
+              {/* Submit */}
+              <button
+                type="submit"
+                className="w-full bg-green-700 text-white py-3 rounded-lg font-semibold hover:bg-green-800 transition"
+              >
+                Submit Order
+              </button>
+            </form>
+
+          </div>
         </div>
-
-      </div>
-    </section>
+      )}
+    </>
   );
 }

@@ -1,6 +1,8 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
+import { X } from "lucide-react";
 
 const categories = [
   { name: "Bhakawari", image: "/products/bhakarwadi.jpeg", products: 50 },
@@ -11,38 +13,102 @@ const categories = [
 ];
 
 export default function SnackCategories() {
-  return (
-    <section className="py-16 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
-        <h2 className="text-3xl sm:text-4xl font-bold text-green-800 mb-12 md:text-center">
-          Explore Our Snacks
-        </h2>
+  const [selectedSnack, setSelectedSnack] = useState(null);
+  const [open, setOpen] = useState(false);
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 sm:gap-8 lg:gap-10 justify-items-center">
-          {categories.map((cat, index) => (
-            <div
-              key={index}
-              className="flex flex-col items-center bg-yellow-50 rounded-xl p-4 sm:p-6 md:p-6 shadow-lg hover:shadow-2xl transition duration-300 w-full max-w-[200px]"
-            >
-              {/* Circle with image filling edges */}
-              <div className="w-24 h-24 sm:w-28 sm:h-28 md:w-36 md:h-36 mb-4 sm:mb-5 rounded-full flex items-center justify-center bg-yellow-200 relative overflow-hidden">
-                <Image
-                  src={cat.image}
-                  alt={cat.name}
-                  fill
-                  className="object-cover"
-                />
+  return (
+    <>
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
+          <h2 className="text-3xl sm:text-4xl font-bold text-green-800 mb-12 md:text-center">
+            Explore Our Snacks
+          </h2>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 justify-items-center">
+            {categories.map((cat, index) => (
+              <div
+                key={index}
+                onClick={() => {
+                  setSelectedSnack(cat.name);
+                  setOpen(true);
+                }}
+                className="cursor-pointer flex flex-col items-center bg-yellow-50 rounded-xl p-4 shadow-lg hover:shadow-2xl transition w-full max-w-[200px]"
+              >
+                <div className="w-24 h-24 sm:w-28 sm:h-28 md:w-36 md:h-36 mb-4 rounded-full bg-yellow-200 relative overflow-hidden">
+                  <Image src={cat.image} alt={cat.name} fill className="object-cover" />
+                </div>
+                <h3 className="text-sm sm:text-base font-semibold text-green-800 text-center">
+                  {cat.name}
+                </h3>
+                <p className="text-xs text-gray-500 text-center">
+                  {cat.products}+ Products
+                </p>
               </div>
-              <h3 className="text-sm sm:text-base md:text-lg font-semibold text-green-800 text-center">
-                {cat.name}
-              </h3>
-              <p className="text-xs sm:text-sm md:text-sm text-gray-500 text-center">
-                {cat.products}+ Products
-              </p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* ================= POPUP MODAL ================= */}
+      {open && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4">
+          <div className="bg-white rounded-2xl w-full max-w-md p-6 relative">
+
+            {/* Close */}
+            <button
+              onClick={() => setOpen(false)}
+              className="absolute top-3 right-3 text-gray-500 hover:text-red-500"
+            >
+              <X />
+            </button>
+
+            <h3 className="text-2xl font-bold text-green-800 mb-4 text-center">
+              Quick Order
+            </h3>
+
+            <form className="space-y-4">
+              {/* Snack Name */}
+              <input
+                type="text"
+                value={selectedSnack || ""}
+                readOnly
+                className="w-full border text-black rounded-lg px-4 py-2 bg-gray-100"
+              />
+
+              {/* Snack Dropdown */}
+              <select className="w-full border text-black rounded-lg px-4 py-2">
+                <option>Select Snack Variant</option>
+                <option>Regular</option>
+                <option>Masala</option>
+                <option>Spicy</option>
+              </select>
+
+              {/* Quantity */}
+              <input
+                type="number"
+                placeholder="Quantity (kg / packets)"
+                className="w-full border  text-black rounded-lg px-4 py-2"
+              />
+
+              {/* Mobile */}
+              <input
+                type="tel"
+                placeholder="Mobile Number"
+                className="w-full border text-black rounded-lg px-4 py-2"
+              />
+
+              {/* Button */}
+              <button
+                type="submit"
+                className="w-full bg-green-700 text-white py-3 rounded-lg font-semibold hover:bg-green-800 transition"
+              >
+                Submit Order
+              </button>
+            </form>
+
+          </div>
+        </div>
+      )}
+    </>
   );
 }
