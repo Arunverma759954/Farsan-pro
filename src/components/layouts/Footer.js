@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { Phone, Mail } from "lucide-react";
 import { FaFacebookF, FaInstagram, FaTwitter, FaWhatsapp } from "react-icons/fa";
@@ -30,14 +29,7 @@ export default function Footer() {
 
             {/* Brand */}
             <div className="max-w-sm">
-              <Link href="/" className="flex items-center gap-3 mb-4">
-                <Image
-                  src="/farsan-gold.png"
-                  alt="Farsan Gold Healthy Snacks"
-                  width={64}
-                  height={64}
-                  className="object-contain shrink-0 mix-blend-darken"
-                />
+              <Link href="/" className="flex items-center mb-4">
                 <div>
                   <h2 className="text-2xl font-bold text-white">
                     FARSAN<span className="text-green-400">G</span>
@@ -128,15 +120,7 @@ export default function Footer() {
       <div className="md:hidden fixed bottom-0 left-0 w-full z-50 bg-white border-t shadow-lg">
         <div className="flex items-center justify-between px-4 py-3">
 
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 shrink-0">
-            <Image
-              src="/farsan-gold.png"
-              alt="Farsan Gold"
-              width={36}
-              height={36}
-              className="object-contain"
-            />
+          <Link href="/" className="flex items-center shrink-0">
             <span className="font-bold text-gray-800 text-sm">FarsanG</span>
           </Link>
 
