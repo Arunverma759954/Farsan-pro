@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { Phone, Mail } from "lucide-react";
 import { FaFacebookF, FaInstagram, FaTwitter, FaWhatsapp } from "react-icons/fa";
@@ -8,7 +9,7 @@ export default function Footer() {
   return (
     <>
       {/* ================= FOOTER ================= */}
-      <footer className="relative bg-red-900 text-white pt-28 pb-24 md:pb-16">
+      <footer className="relative bg-gray-900 text-white pt-28 pb-24 md:pb-16">
 
         {/* Top Curve */}
         <div className="absolute top-0 left-0 w-full overflow-hidden leading-none">
@@ -29,16 +30,23 @@ export default function Footer() {
 
             {/* Brand */}
             <div className="max-w-sm">
-              <Link href="/" className="flex items-center mb-4">
+              <Link href="/" className="flex items-center gap-3 mb-4">
+                <Image
+                  src="/footer-logo.png"
+                  alt="Farsan Gold"
+                  width={56}
+                  height={56}
+                  className="object-contain shrink-0 opacity-95"
+                />
                 <div>
                   <h2 className="text-2xl font-bold text-white">
                     FARSAN<span className="text-green-400">G</span>
                   </h2>
-                  <p className="text-red-100 text-sm">Healthy Snacks</p>
+                  <p className="text-gray-400 text-sm">Healthy Snacks</p>
                 </div>
               </Link>
 
-              <p className="text-red-100 text-sm leading-relaxed">
+              <p className="text-gray-400 text-sm leading-relaxed">
                 Freshly prepared farsan snacks made with premium ingredients,
                 delivering authentic taste and trusted quality.
               </p>
@@ -48,8 +56,9 @@ export default function Footer() {
               </p> */}
 
               {/* FSSI Code */}
-              <p className="mt-1 text-red-200 text-l">
-                FSSI Code: <strong>13317008000404</strong>
+              <p className="mt-3 text-sm">
+                <span className="text-gray-500">FSSI Code:</span>{' '}
+                <span className="font-semibold text-amber-400 tracking-wide">13317008000404</span>
               </p>
             </div>
 
@@ -59,7 +68,7 @@ export default function Footer() {
               {/* Links */}
               <div>
                 <h3 className="font-semibold mb-4">Quick Links</h3>
-                <ul className="space-y-3 text-sm text-red-100">
+                <ul className="space-y-3 text-sm text-gray-400">
                   <li><Link href="/" className="hover:text-white">Home</Link></li>
                   <li><Link href="/about" className="hover:text-white">About</Link></li>
                   <li><Link href="/gallery" className="hover:text-white">Gallery</Link></li>
@@ -70,7 +79,7 @@ export default function Footer() {
               {/* Contact */}
               <div>
                 <h3 className="font-semibold mb-4">Contact</h3>
-                <ul className="space-y-3 text-sm text-red-100">
+                <ul className="space-y-3 text-sm text-gray-400">
                   <li className="flex items-center gap-2">
                     <Phone size={16} /> +91 85950 52849
                   </li>
@@ -83,19 +92,19 @@ export default function Footer() {
                 <div className="flex gap-4 mt-6">
                   <a
                     href="#"
-                    className="p-2 rounded-full bg-red-800 hover:bg-red-700 transition flex items-center justify-center"
+                    className="p-2 rounded-full bg-gray-700 hover:bg-gray-600 transition flex items-center justify-center"
                   >
                     <FaFacebookF size={18} />
                   </a>
                   <a
                     href="#"
-                    className="p-2 rounded-full bg-red-800 hover:bg-red-700 transition flex items-center justify-center"
+                    className="p-2 rounded-full bg-gray-700 hover:bg-gray-600 transition flex items-center justify-center"
                   >
                     <FaInstagram size={18} />
                   </a>
                   <a
                     href="#"
-                    className="p-2 rounded-full bg-red-800 hover:bg-red-700 transition flex items-center justify-center"
+                    className="p-2 rounded-full bg-gray-700 hover:bg-gray-600 transition flex items-center justify-center"
                   >
                     <FaTwitter size={18} />
                   </a>
@@ -120,7 +129,14 @@ export default function Footer() {
       <div className="md:hidden fixed bottom-0 left-0 w-full z-50 bg-white border-t shadow-lg">
         <div className="flex items-center justify-between px-4 py-3">
 
-          <Link href="/" className="flex items-center shrink-0">
+          <Link href="/" className="flex items-center gap-2 shrink-0">
+            <Image
+              src="/footer-logo.png"
+              alt="Farsan Gold"
+              width={32}
+              height={32}
+              className="object-contain"
+            />
             <span className="font-bold text-gray-800 text-sm">FarsanG</span>
           </Link>
 
