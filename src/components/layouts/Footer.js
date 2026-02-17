@@ -120,7 +120,7 @@ export default function Footer() {
       <a
         href="https://wa.me/918595052849"
         target="_blank"
-        className="hidden md:flex fixed bottom-6 right-6 z-50 bg-red-600 hover:bg-red-700 text-white w-14 h-14 rounded-full items-center justify-center shadow-lg transition"
+        className="hidden md:flex fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#20BD5A] text-white w-14 h-14 rounded-full items-center justify-center shadow-lg transition"
       >
         <FaWhatsapp size={28} />
       </a>
@@ -151,7 +151,7 @@ export default function Footer() {
 
             <a
               href="https://wa.me/918595052849"
-              className="bg-red-600 text-white w-10 h-10 rounded-full flex items-center justify-center"
+              className="bg-[#25D366] hover:bg-[#20BD5A] text-white w-10 h-10 rounded-full flex items-center justify-center"
             >
               <FaWhatsapp size={18} />
             </a>
